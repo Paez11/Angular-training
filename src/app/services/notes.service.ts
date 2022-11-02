@@ -7,7 +7,7 @@ import { LoginService } from './login.service';
   providedIn: 'root'
 })
 export class NotesService {
-  private dbPath = '/Notas';
+  private dbPath = '/Notes';
   notesRef!: AngularFirestoreCollection<any>;
   
   public notes:INote[] = [
@@ -18,7 +18,7 @@ export class NotesService {
   ];
 
   constructor(private db: AngularFirestore, private user:LoginService) {
-    this.notesRef = db.collection(this.user.user.id);
+    this.notesRef = db.collection(this.user.user.email);
 
     //cargar todas las notas del servidor
     this.notesRef.get().subscribe(d=>{
@@ -44,6 +44,8 @@ export class NotesService {
      * Conectar firebase
      */
     try{
+      //let idUser = this.user.user.id;
+      //let dRef2:DocumentReference<any> = await this.notesRef.add(idUser);
       let {id,...newNoteWithOutID} = newNote;
       let dRef:DocumentReference<any> = await this.notesRef.add({...newNoteWithOutID});
       newNote.id=dRef.id;

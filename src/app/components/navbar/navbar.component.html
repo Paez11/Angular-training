@@ -15,7 +15,7 @@
             <li>
                 <a class="nav-link" role="button" routerLinkActive="active" routerLink="/about">Acerca de</a>
             </li>
-            <li>
+            <li class="nav-item dropdown" *ngIf="this.loginS.user">
                 <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" routerLinkActive="active">
                     Cuenta
                 </a>

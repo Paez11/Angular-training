@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   imports: [CommonModule],
   template: `
     <p (click)='inicio()'>
-      error404 works!
+      error404: page not found
     </p>
   `,
   styles: [
