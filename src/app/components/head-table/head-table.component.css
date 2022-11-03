@@ -13,10 +13,6 @@ table{
     /*align-items: center;*/
 }
 
-tr:first-of-type{
-    margin-top: 0.6%;
-}
-
 .des{
     width: 50%;
 }

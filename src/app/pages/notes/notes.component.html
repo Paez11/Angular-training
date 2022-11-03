@@ -1,6 +1,6 @@
+<app-head-table></app-head-table>
 <app-note *ngFor="let note of this.notesS.getNotes();let i=index;trackBy:trackByNotes" [note]="note"
 (editNote)="this.editingNote(note)" (removeNote)="this.removingNote(note)" appHighlight></app-note>
-
 
 <!-- EDIT MODAL-->
 <button id="launchModal" type="button" style="display:none" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">

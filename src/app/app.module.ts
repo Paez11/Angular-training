@@ -16,6 +16,7 @@ import { LoginService } from './services/login.service';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from 'src/environments/environment';
+import { HeadTableComponent } from './components/head-table/head-table.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { environment } from 'src/environments/environment';
     BrowserModule,
     AppRoutingModule,
     NavbarComponent,
+    HeadTableComponent,
     ButtonComponent,
     NotesComponent,
     NewComponent,
