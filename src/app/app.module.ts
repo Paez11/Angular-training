@@ -17,12 +17,13 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from 'src/environments/environment';
 import { HeadTableComponent } from './components/head-table/head-table.component';
+import { MatToolbarModule} from '@angular/material/toolbar';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    //NoteComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +34,8 @@ import { HeadTableComponent } from './components/head-table/head-table.component
     NotesComponent,
     NewComponent,
     HttpClientModule,
+    MatToolbarModule,
+    MatSlideToggleModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule // for firestore
   ],

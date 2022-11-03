@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { INote } from './model/INote';
+import { ThemeService } from './theme';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,12 @@ import { INote } from './model/INote';
 })
 export class AppComponent {
   title = 'holamundo';
+  isDarkTheme: boolean | undefined;
+
+  constructor(private theme: ThemeService) {
+    this.theme.initTheme();
+    this.isDarkTheme = this.theme.isDarkMode();
+  }
 
   public removingNote($event:INote){
     console.log("Elminando Nota");
@@ -19,5 +26,10 @@ export class AppComponent {
   }
   public alerta(){
     alert("Alerta Roja");
+  }
+
+  public toggleTheme(){
+    this.isDarkTheme = this.theme.isDarkMode();
+    this.isDarkTheme? this.theme.update('light-theme'): this.theme.update('dark-theme');
   }
 }
