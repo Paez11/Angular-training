@@ -15,7 +15,7 @@ export class LoginGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       let mockLogin = this.loginS.isAuth();
-
+      
       let result=false;
       if(!mockLogin){
         //Not Logged

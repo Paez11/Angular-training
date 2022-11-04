@@ -19,6 +19,7 @@ import { environment } from 'src/environments/environment';
 import { HeadTableComponent } from './components/head-table/head-table.component';
 import { MatToolbarModule} from '@angular/material/toolbar';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     MatToolbarModule,
     MatSlideToggleModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule // for firestore
+    AngularFirestoreModule,
+    BrowserAnimationsModule // for firestore
   ],
   providers: [NotesService,
     {

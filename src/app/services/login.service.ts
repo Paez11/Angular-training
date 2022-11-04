@@ -16,26 +16,28 @@ export class LoginService {
   notesRef!: AngularFirestoreCollection<any>;
 
   constructor(private authService: SocialAuthService,
-    private router:Router, private db: AngularFirestore) {
-
-    this.authService.authState.subscribe((user) => {
-      this.user = user;
-      this.loggedIn = (user != null);
-      if(this.loggedIn){
-        localStorage.setItem('currentUser', JSON.stringify({user:this.user}));
-        if(this.originalPath){
-          this.router.navigate([this.originalPath]);
-          this.originalPath='';
+  private router:Router, private db: AngularFirestore) {
+    if(this.autoLogin()!=null){
+      this.user = this.autoLogin();
+    }else{
+      this.authService.authState.subscribe((user) => {
+        this.user = user;
+        this.loggedIn = (user != null);
+        if(this.loggedIn){
+          localStorage.setItem('currentUser', JSON.stringify({user:this.user}));
+          if(this.originalPath){
+            this.router.navigate([this.originalPath]);
+            this.originalPath='';
+          }else{
+            this.router.navigate(['']);
+          }
         }else{
-          this.router.navigate(['']);
+          //localStorage.setItem('currentUser', "[]");
+          this.router.navigate(['/login']);
         }
-      }else{
-        //localStorage.setItem('currentUser', "[]");
-        this.router.navigate(['/login']);
-      }
-      
     });
-   }
+    }
+  }
   isAuth():boolean{
     return this.loggedIn;
   }
@@ -48,11 +50,11 @@ export class LoginService {
   }*/
 
   autoLogin(){
-    let userData = JSON.parse(localStorage.getItem('currentUser')!);
+    let userData = localStorage.getItem('currentUser') ? JSON.parse(localStorage.getItem('currentUser')!) : null;
     if(!userData){
       this.user = userData;
     }
-    
+    return  this.user;
   }
 
   async signOut(): Promise<void> {
