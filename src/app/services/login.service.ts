@@ -22,14 +22,18 @@ export class LoginService {
       this.user = user;
       this.loggedIn = (user != null);
       if(this.loggedIn){
+        localStorage.setItem('currentUser', JSON.stringify({user:this.user}));
         if(this.originalPath){
           this.router.navigate([this.originalPath]);
           this.originalPath='';
-        }else
+        }else{
           this.router.navigate(['']);
+        }
       }else{
+        //localStorage.setItem('currentUser', "[]");
         this.router.navigate(['/login']);
       }
+      
     });
    }
   isAuth():boolean{
@@ -42,7 +46,17 @@ export class LoginService {
   async signInWithGoogle():Promise<SocialUser> {
     return this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
   }*/
+
+  autoLogin(){
+    let userData = JSON.parse(localStorage.getItem('currentUser')!);
+    if(!userData){
+      this.user = userData;
+    }
+    
+  }
+
   async signOut(): Promise<void> {
+    localStorage.clear();
     return await this.authService.signOut();
   }
 

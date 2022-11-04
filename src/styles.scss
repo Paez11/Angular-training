@@ -39,24 +39,73 @@ $dark-theme: mat.define-dark-theme((
 .dark-theme{
     @include mat.all-component-themes($dark-theme);
 
-    background-color: #333 !important;
+    background-color: #0D1117 !important;
     color: whitesmoke;
 
+    input{
+      background-color: #161B22 !important;
+      color:whitesmoke;
+      &:focus{
+        color:whitesmoke;
+      }
+      &::placeholder{
+        color:rgba(245, 245, 245, 0.63);
+      }
+    }
+
+    textarea{
+      background-color: #161B22 !important;
+      color:whitesmoke;
+      &:focus{
+        color:whitesmoke;
+      }
+      &::placeholder{
+        color:rgba(245, 245, 245, 0.63);
+      }
+    }
+
     nav{
-        background-color: #212529 !important;
+        background-color: #161B22 !important;
         .navbar-brand{
           color:whitesmoke;
         }
-    
           .nav-link{
             color:whitesmoke;
           }
         .navbar-toggler-icon{
           filter: invert(99%) sepia(1%) saturate(4214%) hue-rotate(223deg) brightness(118%) contrast(100%);
         }
-    }
+        .nav-item {
+          background-color:  #161B22 !important;
+          .dropdown-menu {
+            background-color:  #161B22 !important;
+            color:whitesmoke;
+            .dropdown-item {
+              background-color:  #161B22 !important;
+              color:whitesmoke;
+            }
+            li {
+              background-color:  #161B22 !important;
+            }
+          }
+        }
+        .modal {
+          .modal-dialog {
+            background-color:  #161B22 !important;
+            color:whitesmoke;
+            .modal-content {
+              background-color: #161B22 !important;
+              color:whitesmoke;
+              .modal-header {
+                background-color:  #161B22 !important;
+                color:whitesmoke;
+              }
+            }
+          }
+        }
+      }
     table{
-        background-color: #212529 !important;
+        background-color: #161B22 !important;
         color: whitesmoke;
     }
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { INote } from './model/INote';
+import { LoginService } from './services/login.service';
 import { ThemeService } from './theme';
 
 @Component({
@@ -11,7 +12,8 @@ export class AppComponent {
   title = 'holamundo';
   isDarkTheme: boolean | undefined;
 
-  constructor(private theme: ThemeService) {
+  constructor(private theme: ThemeService, log:LoginService) {
+    log.autoLogin();
     this.theme.initTheme();
     this.isDarkTheme = this.theme.isDarkMode();
   }
