@@ -1,17 +1,15 @@
-import { Injectable, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NoteComponent } from './components/note/note.component';
 import { ButtonComponent } from './components/button/button.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NotesComponent } from './pages/notes/notes.component';
 import { NewComponent } from './pages/new/new.component';
-import { HttpClientModule } from '@angular/common/http';
-import { SocialLoginModule, SocialAuthServiceConfig, SocialUser } from '@abacritt/angularx-social-login';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
 import { GoogleLoginProvider} from '@abacritt/angularx-social-login';
 import { NotesService } from './services/notes.service';
-import { Router } from '@angular/router';
 import { LoginService } from './services/login.service';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
@@ -20,8 +18,14 @@ import { HeadTableComponent } from './components/head-table/head-table.component
 import { MatToolbarModule} from '@angular/material/toolbar';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { FormsModule } from '@angular/forms';
 
 
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,12 +38,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ButtonComponent,
     NotesComponent,
     NewComponent,
+    FormsModule,
     HttpClientModule,
     MatToolbarModule,
     MatSlideToggleModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireModule.initializeApp(environment.firebaseConfig), // for firestore
     AngularFirestoreModule,
-    BrowserAnimationsModule // for firestore
+    BrowserAnimationsModule, 
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient]
+    }
+    })
   ],
   providers: [NotesService,
     {

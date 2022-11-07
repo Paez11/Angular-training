@@ -4,9 +4,11 @@ body{
     margin: auto;
 }
 
+.container1{
+    padding: 0 2%;
+}
+
 table{
-    margin-inline: 2%;
-    margin-inline-end: 2%;
     justify-content: center;
     text-align: center;
     vertical-align: middle;
@@ -17,6 +19,19 @@ tr:first-of-type{
     margin-top: 0.6%;
 }
 
-.des{
-    width: 50%;
+.c1{
+    width: 4%;
 }
+
+.c2{
+    width: 10%;
+}
+
+.c3{
+    width: 2%;
+}
+
+.c4{
+    width: 3%;
+}
+

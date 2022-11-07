@@ -4,15 +4,31 @@ body{
     margin: auto;
 }
 
-table{
-    margin-inline: 2%;
-    margin-inline-end: 2%;
-    justify-content: center;
-    text-align: center;
-    vertical-align: middle;
-    /*align-items: center;*/
+.container1{
+    padding: 0 2%;
 }
 
-.des{
-    width: 50%;
+table{
+    text-align: center;
+    vertical-align: middle;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.c1{
+    width: 4%;
+}
+
+.c2{
+    width: 10%;
+}
+
+.c3{
+    width: 2%;
+}
+
+.c4{
+    width: 3%;
 }
