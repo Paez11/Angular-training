@@ -1,6 +1,8 @@
-# Holamundo
+# NOTEA
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.
+
+The objective of this proyect is to learn the use and management of Angular. Operation of the web page: it consists of creating and storing notes by user, the notes will be stored in the firebase database through the user's google mail. It also has features such as language change or theme change.
 
 ## Development server
 
