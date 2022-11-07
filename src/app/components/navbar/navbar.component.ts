@@ -24,10 +24,21 @@ export class NavbarComponent implements OnInit {
   constructor(public loginS:LoginService,private theme: ThemeService,private translate: TranslateService) {
     this.theme.initTheme();
     this.isDarkTheme = this.theme.isDarkMode();
-    // this language will be used as a fallback when a translation isn't found in the current language
-    translate.setDefaultLang('english');
+
+    //the lang it will be detected in the browser
+    //translate.getBrowserLang();
+    //navigator.language;
+    //translate.currentLang
+    translate.use(navigator.language);
     // the lang to use, if the lang isn't available, it will use the current loader to get them
     translate.addLangs(['english','spanish']);
+    if(localStorage.getItem('language')){
+      translate.setDefaultLang(localStorage.getItem('language')!);
+      translate.use(localStorage.getItem('language')!);
+    }else{
+      // this language will be used as a fallback when a translation isn't found in the current language
+      translate.setDefaultLang('english');
+    }
     this.langs = translate.getLangs();
    }
 
@@ -46,6 +57,7 @@ export class NavbarComponent implements OnInit {
 
   changeLang(lang: string){
     this.translate.use(lang);
+    localStorage.setItem("language",lang);
   }
 
 }

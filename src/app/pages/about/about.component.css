@@ -11,6 +11,16 @@
     opacity: 0.9;
 }
 
+.description{
+    padding: 10px 30px 0px 30px;
+    text-align: center;
+    font: message-box;
+}
+
+.parrafo{
+    font: message-box;
+}
+
 .c1{
     display: flex;
     flex-direction: column;
@@ -43,8 +53,14 @@
 
 
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 760px) {
     .parrafo{
         margin-left: 8%;
+    }
+    .description{
+        font-size: x-large;
+    }
+    h2{
+        font-size: xx-large;
     }
 }

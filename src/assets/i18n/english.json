@@ -14,7 +14,7 @@
   "EDITB": "edit",
 
   "PTIT": "Proyect description",
-  "PDES": "Esto es una página web realizada con el framework angular (ultima version).El objetivo de esta pagina web es aprender la utilización y el manejo de Angular. Funcionamiento de la pagina web: consiste en creacion y almacenamiento de notas por usuario, las notas se almacenaran en la base de datos de firebase a traves del correo de google del usuario. Tambien tiene funcionalidades como el cambio de idioma o el cambio de tema.",
+  "PDES": "This is a web page made with the angular framework (latest version). The objective of this web page is to learn the use and management of Angular. Operation of the web page: it consists of creating and storing notes by user, the notes will be stored in the firebase database through the user's google mail. It also has features such as language change or theme change.",
   "PAB": "Web page realize by",
   "PA": "Victor Paez Anguita <br> 2ºCFGS DAM student",
   "GITHUB": "My github"
