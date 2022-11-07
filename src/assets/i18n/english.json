@@ -1,0 +1,21 @@
+{
+  "IDIOMA": "Language",
+  "HOME": "Home",
+  "NEW": "New note",
+  "ABOUT": "About",
+  "ACCOUNT": "Account",
+  "TITLE": "title",
+  "DESCRIPTION": "description",
+  "SAVE": "save",
+  "CANCEL": "cancel",
+  "EDIT": "edit note",
+  "CLOSE": "close",
+  "REMOVE": "remove",
+  "EDITB": "edit",
+
+  "PTIT": "Proyect description",
+  "PDES": "Esto es una página web realizada con el framework angular (ultima version).El objetivo de esta pagina web es aprender la utilización y el manejo de Angular. Funcionamiento de la pagina web: consiste en creacion y almacenamiento de notas por usuario, las notas se almacenaran en la base de datos de firebase a traves del correo de google del usuario. Tambien tiene funcionalidades como el cambio de idioma o el cambio de tema.",
+  "PAB": "Web page realize by",
+  "PA": "Victor Paez Anguita <br> 2ºCFGS DAM student",
+  "GITHUB": "My github"
+}

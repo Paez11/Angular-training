@@ -1,10 +1,2 @@
 <app-navbar></app-navbar>
-<label>
-  Idioma
-  <select #langSelect (change)="changeLang(langSelect.value)">
-    <option *ngFor="let lang of langs" [value]="lang">
-      {{ lang }}
-    </option>
-  </select>
-</label>
 <router-outlet></router-outlet>

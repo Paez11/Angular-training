@@ -10,27 +10,9 @@ import { LoginService } from './services/login.service';
 })
 export class AppComponent {
   title = 'Notea';
-  langs: string[];
 
-  constructor(log:LoginService, private translate: TranslateService) {
+  constructor(log:LoginService) {
     log.autoLogin();
-    // this language will be used as a fallback when a translation isn't found in the current language
-    translate.setDefaultLang('es');
-    // the lang to use, if the lang isn't available, it will use the current loader to get them
-    translate.addLangs(['es','en']);
-    this.langs = translate.getLangs();
-    translate.setTranslation('en', {
-      IDIOMA: 'language'
-    })
-    /*
-    this.translate.get('IDIOMA',{value: 'language'}).subscribe((res:string) =>{
-      console.log(res);
-    });
-    */
-  }
-
-  changeLang(lang: string){
-    this.translate.use(lang);
   }
 
   public removingNote($event:INote){

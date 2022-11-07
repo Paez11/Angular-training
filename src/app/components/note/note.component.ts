@@ -1,10 +1,11 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { INote } from '../../model/INote';
 
 @Component({
   selector: 'app-note',
   templateUrl: './note.component.html',
-  styleUrls: ['./note.component.css']
+  styleUrls: ['./note.component.css'],
 })
 export class NoteComponent implements OnInit {
    @Input('note') public note:INote = {

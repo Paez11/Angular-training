@@ -9,17 +9,17 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <ul class="navbar-nav">
                     <li>
-                        <a class="nav-link" role="button" routerLinkActive="active" routerLink="/">Inicio</a>
+                        <a class="nav-link" role="button" routerLinkActive="active" routerLink="/">{{'HOME' | translate}}</a>
                     </li>
                     <li>
-                        <a class="nav-link" role="button" routerLinkActive="active" routerLink="/new">Nueva nota</a>
+                        <a class="nav-link" role="button" routerLinkActive="active" routerLink="/new">{{'NEW' | translate}}</a>
                     </li>
                     <li>
-                        <a class="nav-link" role="button" routerLinkActive="active" routerLink="/about">Acerca de</a>
+                        <a class="nav-link" role="button" routerLinkActive="active" routerLink="/about">{{'ABOUT' | translate}}</a>
                     </li>
                     <li class="nav-item dropdown" *ngIf="this.loginS.user">
                         <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" routerLinkActive="active">
-                            Cuenta
+                            {{'ACCOUNT' | translate}}
                         </a>
                         <ul class="dropdown-menu">
                             <li>   <span style="padding:10px;">{{this.loginS.user!.name}}</span></li>
@@ -27,6 +27,16 @@
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item"  href="#" (click)="logout()">Logout</a></li>
                         </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" routerLinkActive="active">
+                            {{'IDIOMA' | translate}}
+                        </a>
+                        <select class="dropdown-menu" #langSelect (change)="changeLang(langSelect.value)">
+                            <option *ngFor="let lang of langs" [value]="lang">
+                                {{ lang }}
+                            </option>
+                        </select>
                     </li>
                 </ul>
             </div>

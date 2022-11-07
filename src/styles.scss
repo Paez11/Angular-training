@@ -111,6 +111,20 @@ $dark-theme: mat.define-dark-theme((
         background-color: #161B22 !important;
         color: whitesmoke;
     }
+    .modal {
+      .modal-dialog {
+        background-color:  #161B22 !important;
+        color:whitesmoke;
+        .modal-content {
+          background-color: #161B22 !important;
+          color:whitesmoke;
+          .modal-header {
+            background-color:  #161B22 !important;
+            color:whitesmoke;
+          }
+        }
+      }
+    }
 }
 .light-theme{
     @include mat.all-component-themes($light-theme);

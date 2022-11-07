@@ -21,6 +21,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { FormsModule } from '@angular/forms';
+import { NoteComponent } from './components/note/note.component';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -44,7 +45,7 @@ export function createTranslateLoader(http: HttpClient) {
     MatSlideToggleModule,
     AngularFireModule.initializeApp(environment.firebaseConfig), // for firestore
     AngularFirestoreModule,
-    BrowserAnimationsModule, 
+    BrowserAnimationsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
