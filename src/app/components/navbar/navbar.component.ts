@@ -34,7 +34,7 @@ export class NavbarComponent implements OnInit {
       translate.use(localStorage.getItem('language')!);
     }else{
       // this language will be used as a fallback when a translation isn't found in the current language
-      translate.setDefaultLang('english');
+      translate.setDefaultLang('en-EN');
     }
     this.langs = translate.getLangs();
    }
