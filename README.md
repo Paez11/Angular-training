@@ -11,6 +11,14 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+If there is an error with dependencies:
+npm i @angular/service-worker --force
+For firebase deploy:
+• Habilitate Hosting Firebase consol
+• Install Firebase-tools
+• Firebase login
+• Firebase init
+• Firebase deploy -> upload new change in the new build
 
 ## Deploy
 
