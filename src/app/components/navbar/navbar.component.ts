@@ -26,12 +26,9 @@ export class NavbarComponent implements OnInit {
     this.isDarkTheme = this.theme.isDarkMode();
 
     //the lang it will be detected in the browser
-    //translate.getBrowserLang();
-    //navigator.language;
-    //translate.currentLang
     translate.use(navigator.language);
     // the lang to use, if the lang isn't available, it will use the current loader to get them
-    translate.addLangs(['english','spanish']);
+    translate.addLangs(['en-EN','es-ES']);
     if(localStorage.getItem('language')){
       translate.setDefaultLang(localStorage.getItem('language')!);
       translate.use(localStorage.getItem('language')!);

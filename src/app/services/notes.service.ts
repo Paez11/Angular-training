@@ -7,7 +7,7 @@ import { LoginService } from './login.service';
   providedIn: 'root'
 })
 export class NotesService {
-  private dbPath = '/Notes';
+  //private dbPath = '/Notes';
   notesRef!: AngularFirestoreCollection<any>;
   
   public notes:INote[] = [

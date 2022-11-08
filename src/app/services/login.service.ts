@@ -12,7 +12,6 @@ export class LoginService {
   user!: SocialUser;
   loggedIn!: boolean;
   originalPath!:string;
-  private dbPath = '/users';
   notesRef!: AngularFirestoreCollection<any>;
 
   constructor(private authService: SocialAuthService,
@@ -49,7 +48,7 @@ export class LoginService {
     return this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
   }*/
 
-  autoLogin(){
+  autoLogin():SocialUser{
     let userData = localStorage.getItem('currentUser') ? JSON.parse(localStorage.getItem('currentUser')!) : null;
     if(!userData){
       this.user = userData;
